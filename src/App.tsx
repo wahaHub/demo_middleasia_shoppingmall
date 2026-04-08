@@ -26,6 +26,7 @@ import AdminMatchmaking from './AdminMatchmaking';
 import AdminDisputes from './AdminDisputes';
 import AdminVendors from './AdminVendors';
 import AdminProductManagement from './AdminProductManagement';
+import BusinessCustomization from './BusinessCustomization';
 
 // Utility for tailwind class merging
 function cn(...inputs: ClassValue[]) {
@@ -720,7 +721,7 @@ const Footer = () => (
 );
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'product' | 'rfq' | 'company' | 'ai-search' | 'business' | 'ai-marketing' | 'ai-knowledge' | 'product-management' | 'crm' | 'ai-manager' | 'ai-recruitment' | 'admin-dashboard' | 'admin-orders' | 'admin-matchmaking' | 'admin-disputes' | 'admin-vendors' | 'admin-products'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'product' | 'rfq' | 'company' | 'ai-search' | 'business' | 'ai-marketing' | 'ai-knowledge' | 'product-management' | 'crm' | 'ai-manager' | 'ai-recruitment' | 'admin-dashboard' | 'admin-orders' | 'admin-matchmaking' | 'admin-disputes' | 'admin-vendors' | 'admin-products' | 'business-customization'>('home');
 
   React.useEffect(() => {
     const handleNavigate = (e: any) => {
@@ -757,31 +758,35 @@ export default function App() {
   }
 
   if (currentView === 'business') {
-    return <BusinessDashboard onHomeClick={() => setCurrentView('home')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
+    return <BusinessDashboard onHomeClick={() => setCurrentView('home')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
   }
 
   if (currentView === 'ai-marketing') {
-    return <AiMarketingCenter onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
+    return <AiMarketingCenter onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
   }
 
   if (currentView === 'ai-knowledge') {
-    return <AiKnowledgeBase onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
+    return <AiKnowledgeBase onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
   }
 
   if (currentView === 'product-management') {
-    return <ProductManagement onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
+    return <ProductManagement onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
   }
 
   if (currentView === 'crm') {
-    return <CrmPage onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
+    return <CrmPage onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
   }
 
   if (currentView === 'ai-manager') {
-    return <AiManagerBot onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
+    return <AiManagerBot onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
   }
 
   if (currentView === 'ai-recruitment') {
-    return <AiRecruitmentCenter onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} />;
+    return <AiRecruitmentCenter onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onBusinessCustomizationClick={() => setCurrentView('business-customization')} />;
+  }
+
+  if (currentView === 'business-customization') {
+    return <BusinessCustomization onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('business')} onAiMarketingClick={() => setCurrentView('ai-marketing')} onAiKnowledgeClick={() => setCurrentView('ai-knowledge')} onProductManagementClick={() => setCurrentView('product-management')} onCrmClick={() => setCurrentView('crm')} onAiManagerClick={() => setCurrentView('ai-manager')} onAiRecruitmentClick={() => setCurrentView('ai-recruitment')} />;
   }
 
   return (
