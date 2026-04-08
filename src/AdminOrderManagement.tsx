@@ -20,6 +20,7 @@ interface AdminOrderManagementProps {
   onMatchmakingClick: () => void;
   onDisputesClick: () => void;
   onVendorsClick: () => void;
+  onProductsClick: () => void;
 }
 
 const ORDERS = [
@@ -80,7 +81,7 @@ const ORDERS = [
   }
 ];
 
-export default function AdminOrderManagement({ onHomeClick, onDashboardClick, onMatchmakingClick, onDisputesClick, onVendorsClick }: AdminOrderManagementProps) {
+export default function AdminOrderManagement({ onHomeClick, onDashboardClick, onMatchmakingClick, onDisputesClick, onVendorsClick, onProductsClick }: AdminOrderManagementProps) {
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden font-sans text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       
@@ -138,7 +139,7 @@ export default function AdminOrderManagement({ onHomeClick, onDashboardClick, on
             <div className="space-y-1">
               <SidebarItem icon={<Users />} label="用户管理" />
               <SidebarItem icon={<Store />} label="商家管理" onClick={onVendorsClick} />
-              <SidebarItem icon={<Box />} label="商品管理" />
+              <SidebarItem icon={<Box />} label="商品管理" onClick={onProductsClick} />
             </div>
           </div>
           {/* Group 3 */}

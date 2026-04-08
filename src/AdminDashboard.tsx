@@ -21,9 +21,10 @@ interface AdminDashboardProps {
   onMatchmakingClick: () => void;
   onDisputesClick: () => void;
   onVendorsClick: () => void;
+  onProductsClick: () => void;
 }
 
-export default function AdminDashboard({ onHomeClick, onOrdersClick, onMatchmakingClick, onDisputesClick, onVendorsClick }: AdminDashboardProps) {
+export default function AdminDashboard({ onHomeClick, onOrdersClick, onMatchmakingClick, onDisputesClick, onVendorsClick, onProductsClick }: AdminDashboardProps) {
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden font-sans text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       
@@ -81,7 +82,7 @@ export default function AdminDashboard({ onHomeClick, onOrdersClick, onMatchmaki
             <div className="space-y-1">
               <SidebarItem icon={<Users />} label="用户管理" />
               <SidebarItem icon={<Store />} label="商家管理" onClick={onVendorsClick} />
-              <SidebarItem icon={<Box />} label="商品管理" />
+              <SidebarItem icon={<Box />} label="商品管理" onClick={onProductsClick} />
             </div>
           </div>
           {/* Group 3 */}

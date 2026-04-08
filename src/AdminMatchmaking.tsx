@@ -22,9 +22,10 @@ interface AdminMatchmakingProps {
   onOrdersClick: () => void;
   onDisputesClick: () => void;
   onVendorsClick: () => void;
+  onProductsClick: () => void;
 }
 
-export default function AdminMatchmaking({ onHomeClick, onDashboardClick, onOrdersClick, onDisputesClick, onVendorsClick }: AdminMatchmakingProps) {
+export default function AdminMatchmaking({ onHomeClick, onDashboardClick, onOrdersClick, onDisputesClick, onVendorsClick, onProductsClick }: AdminMatchmakingProps) {
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden font-sans text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       
@@ -80,7 +81,7 @@ export default function AdminMatchmaking({ onHomeClick, onDashboardClick, onOrde
             <div className="space-y-1">
               <SidebarItem icon={<Users />} label="用户管理" />
               <SidebarItem icon={<Store />} label="商家管理" onClick={onVendorsClick} />
-              <SidebarItem icon={<Box />} label="商品管理" />
+              <SidebarItem icon={<Box />} label="商品管理" onClick={onProductsClick} />
             </div>
           </div>
           <div>

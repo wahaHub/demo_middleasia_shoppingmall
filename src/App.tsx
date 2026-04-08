@@ -25,6 +25,7 @@ import AdminOrderManagement from './AdminOrderManagement';
 import AdminMatchmaking from './AdminMatchmaking';
 import AdminDisputes from './AdminDisputes';
 import AdminVendors from './AdminVendors';
+import AdminProductManagement from './AdminProductManagement';
 
 // Utility for tailwind class merging
 function cn(...inputs: ClassValue[]) {
@@ -719,7 +720,7 @@ const Footer = () => (
 );
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'product' | 'rfq' | 'company' | 'ai-search' | 'business' | 'ai-marketing' | 'ai-knowledge' | 'product-management' | 'crm' | 'ai-manager' | 'ai-recruitment' | 'admin-dashboard' | 'admin-orders' | 'admin-matchmaking' | 'admin-disputes' | 'admin-vendors'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'product' | 'rfq' | 'company' | 'ai-search' | 'business' | 'ai-marketing' | 'ai-knowledge' | 'product-management' | 'crm' | 'ai-manager' | 'ai-recruitment' | 'admin-dashboard' | 'admin-orders' | 'admin-matchmaking' | 'admin-disputes' | 'admin-vendors' | 'admin-products'>('home');
 
   React.useEffect(() => {
     const handleNavigate = (e: any) => {
@@ -732,23 +733,27 @@ export default function App() {
   }, []);
 
   if (currentView === 'admin-dashboard') {
-    return <AdminDashboard onHomeClick={() => setCurrentView('home')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} />;
+    return <AdminDashboard onHomeClick={() => setCurrentView('home')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} onProductsClick={() => setCurrentView('admin-products')} />;
   }
 
   if (currentView === 'admin-orders') {
-    return <AdminOrderManagement onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} />;
+    return <AdminOrderManagement onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} onProductsClick={() => setCurrentView('admin-products')} />;
   }
 
   if (currentView === 'admin-matchmaking') {
-    return <AdminMatchmaking onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} />;
+    return <AdminMatchmaking onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} onProductsClick={() => setCurrentView('admin-products')} />;
   }
 
   if (currentView === 'admin-disputes') {
-    return <AdminDisputes onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onVendorsClick={() => setCurrentView('admin-vendors')} />;
+    return <AdminDisputes onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onVendorsClick={() => setCurrentView('admin-vendors')} onProductsClick={() => setCurrentView('admin-products')} />;
   }
 
   if (currentView === 'admin-vendors') {
-    return <AdminVendors onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} />;
+    return <AdminVendors onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} onProductsClick={() => setCurrentView('admin-products')} />;
+  }
+
+  if (currentView === 'admin-products') {
+    return <AdminProductManagement onHomeClick={() => setCurrentView('home')} onDashboardClick={() => setCurrentView('admin-dashboard')} onOrdersClick={() => setCurrentView('admin-orders')} onMatchmakingClick={() => setCurrentView('admin-matchmaking')} onDisputesClick={() => setCurrentView('admin-disputes')} onVendorsClick={() => setCurrentView('admin-vendors')} />;
   }
 
   if (currentView === 'business') {

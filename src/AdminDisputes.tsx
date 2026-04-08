@@ -24,9 +24,10 @@ interface AdminDisputesProps {
   onOrdersClick: () => void;
   onMatchmakingClick: () => void;
   onVendorsClick: () => void;
+  onProductsClick: () => void;
 }
 
-export default function AdminDisputes({ onHomeClick, onDashboardClick, onOrdersClick, onMatchmakingClick, onVendorsClick }: AdminDisputesProps) {
+export default function AdminDisputes({ onHomeClick, onDashboardClick, onOrdersClick, onMatchmakingClick, onVendorsClick, onProductsClick }: AdminDisputesProps) {
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden font-sans text-slate-900 selection:bg-rose-100 selection:text-rose-900">
       
@@ -82,7 +83,7 @@ export default function AdminDisputes({ onHomeClick, onDashboardClick, onOrdersC
             <div className="space-y-1">
               <SidebarItem icon={<Users />} label="用户管理" />
               <SidebarItem icon={<Store />} label="商家管理" onClick={onVendorsClick} />
-              <SidebarItem icon={<Box />} label="商品管理" />
+              <SidebarItem icon={<Box />} label="商品管理" onClick={onProductsClick} />
             </div>
           </div>
           <div>
